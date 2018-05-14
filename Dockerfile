@@ -1,6 +1,6 @@
 FROM mysql:5.6
 
-MAINTAINER AaronLuellwitz <aaron.luellwitz@gmx.de>
+MAINTAINER bla
 
 ENV MYSQL_ROOT_PASSWORD password
 
