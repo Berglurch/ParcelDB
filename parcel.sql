@@ -15,5 +15,12 @@ LOCK TABLES `sizes` WRITE;
 INSERT INTO `sizes` VALUES (1,'XS',0,35),(2,'S',35,50),(3,'M',50,65),(4,'L',65,80),(5,'XL',80,300);
 UNLOCK TABLES;
 
-GRANT SELECT ON `parcel`.* TO 'parcel'@'%' IDENTIFIED BY 'parcelpassword';
+CREATE USER 'parcel'@'localhost' IDENTIFIED BY 'parcelpassword';
+CREATE USER 'parcel'@'%' IDENTIFIED BY 'parcelpassword';
+
+GRANT ALL ON *.* TO 'parcel'@'localhost';
+GRANT ALL ON *.* TO 'parcel'@'%';
+
+--GRANT SELECT ON `parcel`.* TO 'parcel'@'%' IDENTIFIED BY 'parcelpassword';
+
 FLUSH PRIVILEGES;
